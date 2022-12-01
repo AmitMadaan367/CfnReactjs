@@ -22,7 +22,7 @@ Parameters:
         Type: String
         Default: "145.0.2.0/24"
 
-    servername1:
+    reactApp:
         Description: Enter the EC2 Name.
         Type: String
         Default: Reactjs 
@@ -76,7 +76,7 @@ Resources:
             IamInstanceProfile: !Ref InstanceRoleInstanceProfile
             Tags: 
                 - Key: Name
-                  Value: !Ref servername1
+                  Value: !Ref reactApp
             SubnetId: !Ref Subnet1
             SecurityGroupIds:
                 - !Ref SG
@@ -375,7 +375,7 @@ Resources:
             DeploymentGroupName: !Ref DeploymentGroupName  
             Ec2TagFilters: 
                 - Key: Name
-                  Value: !Ref servername1
+                  Value: !Ref reactApp
                   Type: "KEY_AND_VALUE" 
             ServiceRoleArn: !GetAtt CodeDeployRole.Arn
 
