@@ -68,7 +68,7 @@ Resources:
 
 # EC2 instance
 
-    server1:   
+    ReactApp:   
         Type: AWS::EC2::Instance       
         Properties: 
             ImageId: ami-0149b2da6ceec4bb0
@@ -268,7 +268,7 @@ Resources:
             Protocol: HTTP
             TargetType: instance
             Targets:
-            - Id: !Ref server1
+            - Id: !Ref ReactApp
             VpcId: !Ref VPC
 
 # S3 
@@ -470,9 +470,9 @@ Resources:
 #OUTPUT
 
 Outputs:
-    server1:
-        Description: IPv4 of server1
-        Value: !GetAtt server1.PublicIp
+    ReactApp:
+        Description: IPv4 of ReactApp
+        Value: !GetAtt ReactApp.PublicIp
 
     LoadBalancer:
         Description: DNS of LoadBalancer
